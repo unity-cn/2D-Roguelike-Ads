@@ -442,11 +442,15 @@ PlayerSettings:
   - WebGL::dataCaching
   WebGL::dataCaching: 0
   stringPropertyNames:
+  - Build_ServiceEnabled::Build_ServiceEnabled
+  - UNet_ServiceEnabled::UNet_ServiceEnabled
   - WebGL::emscriptenArgs
   - WebGL::template
+  Build_ServiceEnabled::Build_ServiceEnabled: False
+  UNet_ServiceEnabled::UNet_ServiceEnabled: True
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 9c6ab534-43b4-4153-9b30-bc40053890c9
+  projectName: 2D-Roguelike
+  organizationId: solomonli
   cloudEnabled: 0
