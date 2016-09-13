@@ -37,7 +37,7 @@ public class UnityAdsManager : MonoBehaviour {
 		{
 			ShowOptions options = new ShowOptions();
 			options.resultCallback = HandleShowResult;
-			Advertisement.Show ();
+			Advertisement.Show ("video", options);
 		}
 	}
 
