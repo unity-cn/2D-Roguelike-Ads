@@ -89,7 +89,7 @@ public class Player : MovingObject {
 
 	protected override void AttemptMove <T> (int xDir, int yDir)
 	{
-		food--;
+		food-=4;
 		foodText.text = "Food: " + food;
 
 		base.AttemptMove<T> (xDir, yDir);
@@ -150,5 +150,12 @@ public class Player : MovingObject {
 			SoundManager.instance.musicSource.Stop();
 			GameManager.instance.GameOver ();
 		}
+	}
+
+
+	// Unity Ads demo
+	public void RewardFood() {
+		food += 40;
+		foodText.text = "Food: " + food;
 	}
 }
