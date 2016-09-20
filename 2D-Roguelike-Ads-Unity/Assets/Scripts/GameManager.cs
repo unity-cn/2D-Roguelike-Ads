@@ -61,7 +61,14 @@ public class GameManager : MonoBehaviour {
 		doingSetup = false;
 	}
 
-	public void GameOver()
+	public void RecoverDecision()
+	{
+		levelText.text = "Free Recover.";
+		levelImage.SetActive (true);
+		enabled = false;
+	}
+
+	private void GameOver()
 	{
 		levelText.text = "After " + level + " days, you starved.";
 		levelImage.SetActive (true);

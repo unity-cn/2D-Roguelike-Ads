@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class UnityAdsManager : MonoBehaviour {
 
-	public Button showAdButton;
-	public GameObject rewardHolder;
+	private Button showAdButton;
+	private string contextPlacementId;
 
 
 	private readonly float loadingInterval = 7f;
 	private float loadingRemain;
+
+	void Awake()
+	{
+		showAdButton = GameObject.Find ("RewardButton").GetComponent<Button>();
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -38,15 +43,14 @@ public class UnityAdsManager : MonoBehaviour {
 		ProgressLoading ();
 	}
 
-	public void ShowAd()
+	public void ShowAd(string placementId)
 	{
-		Rewards rewardScript = rewardHolder.GetComponent<Rewards> ();
-		rewardScript.context = rewardScript.rewardItem1;
-		if (Advertisement.IsReady(rewardScript.context))
+		contextPlacementId = placementId;
+		if (Advertisement.IsReady(contextPlacementId))
 		{
 			ShowOptions options = new ShowOptions();
 			options.resultCallback = HandleShowResult;
-			Advertisement.Show (rewardScript.context, options);
+			Advertisement.Show (contextPlacementId, options);
 		}
 	}
 
@@ -56,8 +60,9 @@ public class UnityAdsManager : MonoBehaviour {
 		switch (result)
 		{
 		case ShowResult.Finished:
-			Rewards rewardScript = rewardHolder.GetComponent<Rewards> ();
-			rewardScript.Reward ();
+			GameObject playerGo = GameObject.Find ("Player");
+			Player player = playerGo.GetComponent<Player> () as Player;
+			player.Reward (contextPlacementId);
 			break;
 		case ShowResult.Skipped:
 			buttonText.text = "Video was skipped.";

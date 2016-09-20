@@ -21,6 +21,9 @@ public class Player : MovingObject {
 	private int food;
 	private Vector2 touchOrigin = -Vector2.one;
 
+	[HideInInspector] public readonly string inGameFoodReward = "inGameFoodReward";
+	[HideInInspector] public readonly string rebornWithFoodReward = "rebornWithFoodReward";
+
 	// Use this for initialization
 	protected override void Start () 
 	{
@@ -100,7 +103,7 @@ public class Player : MovingObject {
 			SoundManager.instance.RandomizeSfx(moveSound1, moveSound2);
 		}
 
-		CheckIfGameOver ();
+		CheckDeath ();
 
 		GameManager.instance.playersTurn = false;
 	}
@@ -140,28 +143,40 @@ public class Player : MovingObject {
 		animator.SetTrigger ("playerHit");
 		food -= loss;
 		foodText.text = "-" + loss + " Food: " + food;
-		CheckIfGameOver ();
+		CheckDeath ();
 	}
 
-	private void CheckIfGameOver()
+	private void CheckDeath()
 	{
 		if (food <= 0) {
 			SoundManager.instance.PlaySingle(gameOverSound);
 			SoundManager.instance.musicSource.Stop();
-
-
+			GameManager.instance.RecoverDecision ();
 		}
 	}
 
-	private void FinallyGameOver() 
+	private void GameOver() 
 	{
-		GameManager.instance.GameOver ();
+//		GameManager.instance.GameOver ();
 	}
 
 
 	// Unity Ads demo
-	public void RewardFood() {
+	public void Reward(string placementId) {
+		if (placementId.Equals (inGameFoodReward)) {
+			RewardFood ();
+		} else if (placementId.Equals (rebornWithFoodReward)) {
+			Recover ();
+		}
+	}
+
+	private void RewardFood() {
 		food += 50;
+		foodText.text = "Food: " + food;
+	}
+
+	private void Recover() {
+		food += 30;
 		foodText.text = "Food: " + food;
 	}
 }
