@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
 		levelText.text = "Day " + level;
+		RecoverOptions (false);
 		levelImage.SetActive (true);
 		Invoke ("HideLevelImage", levelStartDelay);
 
@@ -61,18 +62,43 @@ public class GameManager : MonoBehaviour {
 		doingSetup = false;
 	}
 
+	private void RecoverOptions(bool appear)
+	{
+		GameObject recoverGo = GameObject.Find ("Recover");
+		GameObject gameOverGo = GameObject.Find ("GameOver");
+
+		if (recoverGo != null) {
+			Text recoverText = recoverGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
+			recoverText.text = appear ? "Free Recover" : "";
+		}
+
+		if (gameOverGo != null) {
+			Text gameOverText = gameOverGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
+			gameOverText.text = appear ? "Game Over" : "";
+		}
+	}
+
 	public void RecoverDecision()
 	{
-		levelText.text = "Free Recover.";
+		levelText.text = "";
 		levelImage.SetActive (true);
+		RecoverOptions (true);
 		enabled = false;
 	}
 
-	private void GameOver()
+	public void Recover(){
+		levelImage.SetActive (false);
+		RecoverOptions (false);
+		levelText.text = "Day " + level;
+		enabled = true;
+	}
+
+	public void GameOver()
 	{
 		levelText.text = "After " + level + " days, you starved.";
 		levelImage.SetActive (true);
 		enabled = false;
+		RecoverOptions (false);
 	}
 
 	// Update is called once per frame

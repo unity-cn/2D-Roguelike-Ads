@@ -155,9 +155,9 @@ public class Player : MovingObject {
 		}
 	}
 
-	private void GameOver() 
+	public void GameOver() 
 	{
-//		GameManager.instance.GameOver ();
+		GameManager.instance.GameOver ();
 	}
 
 
@@ -166,7 +166,7 @@ public class Player : MovingObject {
 		if (placementId.Equals (inGameFoodReward)) {
 			RewardFood ();
 		} else if (placementId.Equals (rebornWithFoodReward)) {
-			Recover ();
+			RewardRecover ();
 		}
 	}
 
@@ -175,8 +175,12 @@ public class Player : MovingObject {
 		foodText.text = "Food: " + food;
 	}
 
-	private void Recover() {
+	private void RewardRecover() {
+		GameManager.instance.Recover ();
 		food += 30;
 		foodText.text = "Food: " + food;
+		if (!SoundManager.instance.musicSource.isPlaying) {
+			SoundManager.instance.musicSource.Play ();
+		}
 	}
 }
