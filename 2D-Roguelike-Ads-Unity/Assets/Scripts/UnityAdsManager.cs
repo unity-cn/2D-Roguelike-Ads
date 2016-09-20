@@ -52,7 +52,6 @@ public class UnityAdsManager : MonoBehaviour {
 
 	private void HandleShowResult (ShowResult result)
 	{
-		int rewardQty = 1;
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
 		switch (result)
 		{
@@ -97,7 +96,7 @@ public class UnityAdsManager : MonoBehaviour {
 		showAdButton.interactable = true;
 
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-		buttonText.text = "Show Ad";
+		buttonText.text = "Free food";
 	}
 
 	private bool IsLoadingCompleted() {

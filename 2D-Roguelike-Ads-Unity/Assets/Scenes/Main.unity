@@ -96,7 +96,6 @@ GameObject:
   - 223: {fileID: 44115228}
   - 114: {fileID: 44115227}
   - 114: {fileID: 44115226}
-  - 114: {fileID: 44115230}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -180,18 +179,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &44115230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 44115225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe41df4f933d94fa488b43f0ff422d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showAdButton: {fileID: 2120543046}
 --- !u!1001 &240377720
 Prefab:
   m_ObjectHideFlags: 0
@@ -235,34 +222,10 @@ Prefab:
       propertyPath: foodText
       value: 
       objectReference: {fileID: 883943224}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: moveSound1
+    - target: {fileID: 11458974, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
+      propertyPath: showAdButton
       value: 
-      objectReference: {fileID: 8300000, guid: 892962212a4b74d1c9f578a3b6ea6439, type: 3}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: moveSound2
-      value: 
-      objectReference: {fileID: 8300000, guid: a826bc3d758db43d6ae9caf415b63d1d, type: 3}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: eatSound1
-      value: 
-      objectReference: {fileID: 8300000, guid: 1cb61f83d60374c7389bb547431919e3, type: 3}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: eatSound2
-      value: 
-      objectReference: {fileID: 8300000, guid: 062161c1897a54088a5430f8c197e1b8, type: 3}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: drinkSound1
-      value: 
-      objectReference: {fileID: 8300000, guid: b6b608537288246c9a464915db27bf52, type: 3}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: drinkSound2
-      value: 
-      objectReference: {fileID: 8300000, guid: bcb9dda73ee914d3e8f252895f73f461, type: 3}
-    - target: {fileID: 11421916, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
-      propertyPath: gameOverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: e2beefeb2273f4efe992adf5b8d67c29, type: 3}
+      objectReference: {fileID: 2120543046}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97a6909f5618e5243a653c903a7e56f0, type: 2}
   m_IsPrefabParent: 0
@@ -512,6 +475,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &602408086 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11458974, guid: 97a6909f5618e5243a653c903a7e56f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 240377720}
+  m_Script: {fileID: 11500000, guid: fe41df4f933d94fa488b43f0ff422d19, type: 3}
 --- !u!1 &883943223
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +963,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 44115230}
+      - m_Target: {fileID: 602408086}
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:

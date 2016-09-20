@@ -148,14 +148,20 @@ public class Player : MovingObject {
 		if (food <= 0) {
 			SoundManager.instance.PlaySingle(gameOverSound);
 			SoundManager.instance.musicSource.Stop();
-			GameManager.instance.GameOver ();
+
+
 		}
+	}
+
+	private void FinallyGameOver() 
+	{
+		GameManager.instance.GameOver ();
 	}
 
 
 	// Unity Ads demo
 	public void RewardFood() {
-		food += 40;
+		food += 50;
 		foodText.text = "Food: " + food;
 	}
 }
