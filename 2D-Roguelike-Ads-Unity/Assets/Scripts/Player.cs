@@ -24,6 +24,10 @@ public class Player : MovingObject {
 	[HideInInspector] public readonly string inGameFoodReward = "inGameFoodReward";
 	[HideInInspector] public readonly string rebornWithFoodReward = "rebornWithFoodReward";
 
+	int foodAdder = 0;
+	int foodAdding = 0;
+	int foodInterval = 3;
+
 	// Use this for initialization
 	protected override void Start () 
 	{
@@ -88,6 +92,8 @@ public class Player : MovingObject {
 		if (horizontal != 0 || vertical != 0) {
 			AttemptMove<Wall> (horizontal, vertical);
 		}
+
+		AddUpFoodAnimated ();
 	}
 
 	protected override void AttemptMove <T> (int xDir, int yDir)
@@ -171,16 +177,31 @@ public class Player : MovingObject {
 	}
 
 	private void RewardFood() {
-		food += 50;
+//		food += 50;
+		foodAdder = 50;
 		foodText.text = "Food: " + food;
 	}
 
 	private void RewardRecover() {
 		GameManager.instance.Recover ();
-		food += 30;
+//		food += 30;
+		foodAdder = 30;
 		foodText.text = "Food: " + food;
 		if (!SoundManager.instance.musicSource.isPlaying) {
 			SoundManager.instance.musicSource.Play ();
+		}
+	}
+
+	private void AddUpFoodAnimated()
+	{
+		if(foodAdder > 0){
+			if (foodAdding >= foodInterval) {
+				foodAdder--;
+				food++;
+				foodText.text = "Food: " + food;
+				foodAdding = 0;
+			}
+			foodAdding++;
 		}
 	}
 }
