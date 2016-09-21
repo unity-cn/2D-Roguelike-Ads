@@ -65,16 +65,22 @@ public class GameManager : MonoBehaviour {
 	private void RecoverOptions(bool appear)
 	{
 		GameObject recoverGo = GameObject.Find ("Recover");
+		GameObject payGo = GameObject.Find ("PayRecover");
 		GameObject gameOverGo = GameObject.Find ("GameOver");
 
 		if (recoverGo != null) {
 			Text recoverText = recoverGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			recoverText.text = appear ? "Free Recover" : "";
+			recoverText.text = appear ? "看广告复活" : "";
+		}
+
+		if (payGo != null) {
+			Text payText = payGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
+			payText.text = appear ? "¥1 复活" : "";
 		}
 
 		if (gameOverGo != null) {
 			Text gameOverText = gameOverGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			gameOverText.text = appear ? "Game Over" : "";
+			gameOverText.text = appear ? "我选择死亡" : "";
 		}
 	}
 

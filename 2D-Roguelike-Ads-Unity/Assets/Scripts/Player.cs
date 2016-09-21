@@ -26,7 +26,7 @@ public class Player : MovingObject {
 
 	int foodAdder = 0;
 	int foodAdding = 0;
-	int foodInterval = 3;
+	int foodInterval = 1;
 
 	// Use this for initialization
 	protected override void Start () 

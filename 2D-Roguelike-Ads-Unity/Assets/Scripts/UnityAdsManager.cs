@@ -83,7 +83,7 @@ public class UnityAdsManager : MonoBehaviour {
 		showAdButton.interactable = false;
 
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-		buttonText.text = "Loading Video";
+		buttonText.text = "广告准备中...";
 	}
 
 	private void ProgressLoading() {
@@ -91,7 +91,7 @@ public class UnityAdsManager : MonoBehaviour {
 			loadingRemain -= Time.deltaTime;
 
 			Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			buttonText.text = "Loading " + (int)loadingRemain + " min";
+			buttonText.text = "准备中,剩余" + (int)loadingRemain + "分钟";
 		} else if(loadingRemain <= 0 && !IsLoadingCompleted()){
 			CompleteLoading ();
 		}
@@ -101,7 +101,7 @@ public class UnityAdsManager : MonoBehaviour {
 		showAdButton.interactable = true;
 
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-		buttonText.text = "Free food";
+		buttonText.text = "看广告得免费食物";
 	}
 
 	private bool IsLoadingCompleted() {
