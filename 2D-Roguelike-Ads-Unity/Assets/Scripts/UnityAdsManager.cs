@@ -31,6 +31,7 @@ public class UnityAdsManager : MonoBehaviour {
 
 	private IEnumerator RevealShowAdButton()
 	{
+		// 1 判断是否初始化完成(在这之前请开启Ads Service)
 		if(!Advertisement.isInitialized || !Advertisement.IsReady()) {
 			yield return new WaitForSeconds(0.5f);
 		}
@@ -46,6 +47,8 @@ public class UnityAdsManager : MonoBehaviour {
 	public void ShowAd(string placementId)
 	{
 		contextPlacementId = placementId;
+
+		// 2 展示广告
 		if (Advertisement.IsReady(contextPlacementId))
 		{
 			ShowOptions options = new ShowOptions();
@@ -54,6 +57,7 @@ public class UnityAdsManager : MonoBehaviour {
 		}
 	}
 
+	// 3 处理回调
 	private void HandleShowResult (ShowResult result)
 	{
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
