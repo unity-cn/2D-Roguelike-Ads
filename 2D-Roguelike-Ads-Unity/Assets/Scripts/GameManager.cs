@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public float turnDelay = .1f;
 	public static GameManager instance = null;
 	public BoardManager boardScript;
-	public int playerFoodPoints = 100;
+	public int playerFoodPoints = 60;
 	[HideInInspector] public bool playersTurn = true;
 
 	private Text levelText;
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour {
 
 		if (payGo != null) {
 			Text payText = payGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			payText.text = appear ? "¥1 复活" : "";
+			payText.text = appear ? "1钻石复活" : "";
 		}
 
 		if (gameOverGo != null) {
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver()
 	{
-		levelText.text = "After " + level + " days, you starved.";
+		levelText.text = "你在" + level + "天之后饿死了";
 		levelImage.SetActive (true);
 		enabled = false;
 		RecoverOptions (false);
