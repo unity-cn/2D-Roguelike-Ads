@@ -70,17 +70,17 @@ public class GameManager : MonoBehaviour {
 
 		if (recoverGo != null) {
 			Text recoverText = recoverGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			recoverText.text = appear ? "看广告复活" : "";
+			recoverText.text = appear ? "Recover = Watch an ad" : "";
 		}
 
 		if (payGo != null) {
 			Text payText = payGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			payText.text = appear ? "1钻石复活" : "";
+			payText.text = appear ? "Recover = Diamond x1" : "";
 		}
 
 		if (gameOverGo != null) {
 			Text gameOverText = gameOverGo.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			gameOverText.text = appear ? "我选择死亡" : "";
+			gameOverText.text = appear ? "END" : "";
 		}
 	}
 
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver()
 	{
-		levelText.text = "你在" + level + "天之后饿死了";
+		levelText.text = "Starved after " + level + " days";
 		levelImage.SetActive (true);
 		enabled = false;
 		RecoverOptions (false);

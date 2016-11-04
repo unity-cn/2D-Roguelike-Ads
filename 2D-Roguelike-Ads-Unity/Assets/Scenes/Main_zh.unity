@@ -482,8 +482,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 220.05501, y: 0}
-  m_SizeDelta: {x: -159.88998, y: 0}
+  m_AnchoredPosition: {x: 119, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336338010
 MonoBehaviour:
@@ -517,7 +517,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $1
+  m_Text: "\xA56 "
 --- !u!222 &336338011
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -717,8 +717,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -66.500046, y: 0}
-  m_SizeDelta: {x: -1.0000877, y: 0}
+  m_AnchoredPosition: {x: -67, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688540463
 MonoBehaviour:
@@ -752,9 +752,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Diamond x30
-
-    Remove ad '
+  m_Text: "\u94BB\u77F3x30\n\u6C38\u4E45\u53BB\u5E7F\u544A"
 --- !u!222 &688540464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1073,10 +1071,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b284a6525342f44599e9ce79e37c2d61, type: 3}
-    m_FontSize: 24
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1084,7 +1082,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Recover = Watch an ad
+  m_Text: "\u770B\u5E7F\u544A\u590D\u6D3B"
 --- !u!222 &1405517102
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1614,7 +1612,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222, y: 0}
+  m_AnchoredPosition: {x: 121, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672234750
@@ -1649,7 +1647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: $3
+  m_Text: "\xA518"
 --- !u!222 &1672234751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1722,7 +1720,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Diamond x10
+  m_Text: "\u94BB\u77F3x10"
 --- !u!222 &1688768388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1856,7 +1854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1762355084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1964,10 +1962,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b284a6525342f44599e9ce79e37c2d61, type: 3}
-    m_FontSize: 24
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1975,7 +1973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Recover = 1 diamond
+  m_Text: "1\u94BB\u77F3\u590D\u6D3B"
 --- !u!222 &1938304641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2158,10 +2156,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b284a6525342f44599e9ce79e37c2d61, type: 3}
-    m_FontSize: 24
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2169,7 +2167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: END GAME
+  m_Text: "\u6211\u9009\u62E9\u6B7B\u4EA1"
 --- !u!222 &2138147976
 CanvasRenderer:
   m_ObjectHideFlags: 0

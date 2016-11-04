@@ -451,7 +451,7 @@ PlayerSettings:
   Build_ServiceEnabled::Build_ServiceEnabled: False
   ErrorHub_ServiceEnabled::ErrorHub_ServiceEnabled: False
   Hub_ServiceEnabled::Hub_ServiceEnabled: False
-  UNet_ServiceEnabled::UNet_ServiceEnabled: False
+  UNet_ServiceEnabled::UNet_ServiceEnabled: True
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
   cloudProjectId: 9c6ab534-43b4-4153-9b30-bc40053890c9

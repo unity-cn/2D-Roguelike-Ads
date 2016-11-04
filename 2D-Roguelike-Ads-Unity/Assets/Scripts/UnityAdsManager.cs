@@ -31,7 +31,7 @@ public class UnityAdsManager : MonoBehaviour {
 
 	private IEnumerator RevealShowAdButton()
 	{
-		// 1 判断是否初始化完成(在这之前请开启Ads Service)
+		// 1 Check if initialized(Make sure to turn on Ads Service)
 		if(!Advertisement.isInitialized || !Advertisement.IsReady()) {
 			yield return new WaitForSeconds(0.5f);
 		}
@@ -48,7 +48,7 @@ public class UnityAdsManager : MonoBehaviour {
 	{
 		contextPlacementId = placementId;
 
-		// 2 展示广告
+		// 2 Show an ad
 		if (Advertisement.IsReady(contextPlacementId))
 		{
 			ShowOptions options = new ShowOptions();
@@ -57,7 +57,7 @@ public class UnityAdsManager : MonoBehaviour {
 		}
 	}
 
-	// 3 处理回调
+	// 3 Handle callbacks
 	private void HandleShowResult (ShowResult result)
 	{
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
@@ -87,7 +87,7 @@ public class UnityAdsManager : MonoBehaviour {
 		showAdButton.interactable = false;
 
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-		buttonText.text = "广告准备中...";
+		buttonText.text = "Loading ...";
 	}
 
 	private void ProgressLoading() {
@@ -95,7 +95,7 @@ public class UnityAdsManager : MonoBehaviour {
 			loadingRemain -= Time.deltaTime;
 
 			Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-			buttonText.text = "准备中,剩余" + (int)loadingRemain + "分钟";
+			buttonText.text = (int)loadingRemain + " min remaining";
 		} else if(loadingRemain <= 0 && !IsLoadingCompleted()){
 			CompleteLoading ();
 		}
@@ -105,7 +105,7 @@ public class UnityAdsManager : MonoBehaviour {
 		showAdButton.interactable = true;
 
 		Text buttonText = showAdButton.gameObject.GetComponentsInChildren (typeof(UnityEngine.UI.Text)) [0] as Text;
-		buttonText.text = "看广告得免费食物";
+		buttonText.text = "Free food by watching an ad";
 	}
 
 	private bool IsLoadingCompleted() {
