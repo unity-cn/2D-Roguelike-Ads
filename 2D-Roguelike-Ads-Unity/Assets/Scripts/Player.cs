@@ -98,8 +98,16 @@ public class Player : MovingObject {
 
 	protected override void AttemptMove <T> (int xDir, int yDir)
 	{
-		food-=4;
+		food = food - 2;
+		if (food < 0) {
+			food = 0;
+		}
 		foodText.text = "Food: " + food;
+
+		bool death = CheckDeath ();
+		if (death) {
+			return;
+		}
 
 		base.AttemptMove<T> (xDir, yDir);
 
@@ -109,7 +117,6 @@ public class Player : MovingObject {
 			SoundManager.instance.RandomizeSfx(moveSound1, moveSound2);
 		}
 
-		CheckDeath ();
 
 		GameManager.instance.playersTurn = false;
 	}
@@ -147,18 +154,23 @@ public class Player : MovingObject {
 	public void loseFood(int loss)
 	{
 		animator.SetTrigger ("playerHit");
-		food -= loss;
+		food = food - loss;
+		if (food < 0) {
+			food = 0;
+		}
 		foodText.text = "-" + loss + " Food: " + food;
 		CheckDeath ();
 	}
 
-	private void CheckDeath()
+	private bool CheckDeath()
 	{
 		if (food <= 0) {
 			SoundManager.instance.PlaySingle(gameOverSound);
 			SoundManager.instance.musicSource.Stop();
 			GameManager.instance.RecoverDecision ();
+			return true;
 		}
+		return false;
 	}
 
 	public void GameOver() 
