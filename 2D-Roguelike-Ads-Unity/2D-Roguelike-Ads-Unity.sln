@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{FAC824B9-428F-78D6-C336-45C2695B2476}") = "2D-Roguelike-Ads-Unity", "Assembly-CSharp.csproj", "{097868FF-C767-C709-AADA-AF7E74A188BC}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2D-Roguelike-Ads-Unity", "Assembly-CSharp.csproj", "{097868FF-C767-C709-AADA-AF7E74A188BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
